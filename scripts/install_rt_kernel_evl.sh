@@ -50,7 +50,7 @@ echo  "-----> Environment configuration complete."
 cd $opt
 echo "-----> Downloading main line kernel"
 if [ ! -d $linux_tree ] ; then
-  git clone --branch v$linux_version.y-evl-rebase https://git.xenomai.org/xenomai4/linux-evl.git
+  git clone --branch v$linux_version.y-evl-rebase https://gitlab.com/Xenomai/xenomai4/linux-evl.git
 else
   cd $linux_tree
   git fetch
