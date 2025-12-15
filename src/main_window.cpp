@@ -80,11 +80,11 @@ QDataStream& operator<<(QDataStream& out, const plugin_connection& conn)
 
 QDataStream& operator>>(QDataStream& in, plugin_connection& conn)
 {
-  in >> conn.dest_port;
-  in >> conn.dest_id;
-  in >> conn.src_port;
-  in >> conn.src_direction;
   in >> conn.src_id;
+  in >> conn.src_direction;
+  in >> conn.src_port;
+  in >> conn.dest_id;
+  in >> conn.dest_port;
   return in;
 }
 
