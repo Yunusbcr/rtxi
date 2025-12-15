@@ -39,6 +39,6 @@ apt-get -y install \
 	libgsl-dev libgtest-dev libgmock-dev libfmt-dev vim lshw stress \
 	binutils-dev zstd git cmake\
 	crash kexec-tools makedumpfile kernel-wedge libncurses5-dev libelf-dev \
-	flex bison pkgconf python3-pip ninja-build dwarves
+	flex bison pkgconf python3-pip ninja-build dwarves meson
 echo "-----> Package dependencies installed."
 echo "-----> Done."
