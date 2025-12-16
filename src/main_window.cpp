@@ -639,15 +639,20 @@ void MainWindow::loadDAQSettings(
     for (const auto& channel_id : userprefs.childGroups()) {
       current_channel_id = channel_id.toUInt();
       userprefs.beginGroup(channel_id);
-      tmp_device->setActive(userprefs.value("active").value<bool>());
+      tmp_device->setChannelActive(DAQ::ChannelType::DI,
+                                   current_channel_id,
+                                   userprefs.value("active").value<bool>());
+
       userprefs.endGroup();
     }
     userprefs.endGroup();  // Digital Input
     userprefs.beginGroup("DO");
     for (const auto& channel_id : userprefs.childGroups()) {
       current_channel_id = channel_id.toUInt();
-      userprefs.beginGroup(channel_name);
-      tmp_device->setActive(userprefs.value("active").value<bool>());
+      userprefs.beginGroup(channel_id);
+      tmp_device->setChannelActive(DAQ::ChannelType::DO,
+                                   current_channel_id,
+                                   userprefs.value("active").value<bool>());
       userprefs.endGroup();
     }
     userprefs.endGroup();  // Digital Output
